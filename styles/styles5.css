@@ -1,0 +1,39 @@
+.campo {
+    align-items: right;
+    font-size: 3vh;
+  }
+  
+  .add {
+    margin-bottom: 3vh;
+    width: 60vh;
+    padding: 1vh;
+    font-size: 2vh;
+  }
+  .fr {
+    text-align: right;
+    margin-right: 70vh;
+  }
+  .banner{
+    margin-left: 17vh;
+    margin-bottom: 4vh;
+  }
+  
+  .adiciona{
+    margin-right: 80vh;
+    
+    text-align: right;
+  }
+
+  .but{
+    margin-bottom: 1vh;
+    text-decoration: none;
+    color: black;
+    padding: 1vh;
+    width: 11vh;
+    border-radius: 8px;
+  }
+  .but:hover{
+    color: red;
+    text-decoration: none;
+    background-color: black;
+  }
