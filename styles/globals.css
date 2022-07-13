@@ -1,0 +1,21 @@
+.App {
+    font-family: sans-serif;
+    text-align: center;
+  }
+  main {
+    height: 100vh;
+  }
+  
+  .links:hover {
+    color: red;
+    background-color: rgb(0, 0, 0);
+  }
+  .about {
+    text-align: justify;
+    font-size: 20px;
+  }
+  .l {
+    margin-left: 20vh;
+  }
+  
+  

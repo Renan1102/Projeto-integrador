@@ -1,0 +1,81 @@
+.imag {
+    background-color: #cccccc;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(https://img.freepik.com/fotos-gratis/renderizacao-3d-de-pilha-de-estoque-com-fundo-desfocado-do-armazem_493806-9233.jpg);
+  }
+  .formin {
+    margin-left: 40%;
+    background-color: rgba(10, 10, 10, 0.5);
+    width: 50vh;
+    height: 100vh;
+    text-align: center;
+    border-radius: 8px;
+    color: white;
+    border: solid 2px black;
+  }
+  .inp {
+    text-align: left;
+    align-items: center;
+    margin-bottom: 4vh;
+    margin-left: 25%;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    padding-right: 5vh;
+    border-radius: 8px;
+    box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sub1 {
+    color: rgb(121, 68, 8);
+    cursor: pointer;
+    margin-top: 13vh;
+    width: 100%;
+    height: 7%;
+    background-color: rgba(243, 223, 186, 0.7);
+    border-radius: 8px;
+    box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5px;
+    font-size: 20px;
+  }
+  .reg {
+    color: rgb(121, 68, 8);
+    cursor: pointer;
+    margin-top: 30px;
+    width: 100%;
+    height: 7%;
+    background-color: rgba(243, 223, 186, 0.7);
+    border-radius: 8px;
+    box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 5px;
+    font-size: 23px;
+    text-decoration: none;
+    border: solid 2px black;
+  }
+  .reg:hover{
+    color: rgb(121, 68, 8);
+  }
+  .labe {
+    font-size: 2vh;
+    margin-right: 14vh;
+  }
+  
+  .topo {
+    margin-bottom: 7vh;
+  }
+  .mens {
+    color: rgb(255, 0, 0);
+  }
+  
+  

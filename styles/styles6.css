@@ -1,0 +1,58 @@
+.container{
+    margin-left: 40vh;
+}
+.bloc{
+    border: solid 2px rgb(181, 175, 175);
+    height: 20vh;
+}
+.bloco{
+    border: solid 2px black;
+    width: 50vh;
+    margin-bottom: 3vh;
+    margin-left: 3vh;
+    margin-top: 5vh;
+}
+.bloco_nome{
+    text-transform: uppercase;
+    font-size: 3vh;
+    margin-bottom: 3vh;
+}
+.abrir{
+    text-decoration: none;
+    background-color: rgb(149, 150, 228);
+    color: black;
+    border-radius: 8px;
+    padding: 0.8vh; 
+}
+.abrir:hover{
+    color: white;
+    border: solid 2px black;
+}
+.tudo{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+.func_button{
+    margin-left: 25vh;
+    text-decoration: none;
+    font-size: 30px;
+    border: solid 2px black;
+    
+    padding-right: 20vh;
+    padding-left: 20vh;
+    text-align: center;
+    align-items: center;
+    background-color: rgb(72, 73, 72);
+    color: white;
+    border-radius: 8px;
+}
+.func_button:hover{
+    color: red;
+}
+
+.icon_func{
+    margin-left: 6vh;
+}
