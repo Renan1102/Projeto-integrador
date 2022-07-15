@@ -1,13 +1,19 @@
 .container{
     margin-left: 40vh;
+    
+    
+}
+.container_fornecedor{
+    display: flex;
+    width: 90vh;
 }
 .bloc{
     border: solid 2px rgb(181, 175, 175);
-    height: 20vh;
+    height: 23vh;
 }
 .bloco{
     border: solid 2px black;
-    width: 50vh;
+    width: 45vh;
     margin-bottom: 3vh;
     margin-left: 3vh;
     margin-top: 5vh;
@@ -15,11 +21,16 @@
 .bloco_nome{
     text-transform: uppercase;
     font-size: 3vh;
-    margin-bottom: 3vh;
+    margin-bottom: 1vh;
+    border-bottom: solid 2px black;
+}
+.detalhes{
+    font-size: 17px;
+    font-style: italic;
 }
 .abrir{
     text-decoration: none;
-    background-color: rgb(149, 150, 228);
+    background-color: rgb(175, 124, 35);
     color: black;
     border-radius: 8px;
     padding: 0.8vh; 
@@ -32,6 +43,16 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+}
+
+.checkb{
+    border: solid 1px black;
+    font-size: 20px;
+    width: 30vh;
+}
+.checkbox{
+    margin-left: 4vh;
+    cursor: pointer;
 }
 
 
@@ -55,4 +76,23 @@
 
 .icon_func{
     margin-left: 6vh;
+}
+
+
+.container_forn{
+    float: right;
+    
+    margin-right: 20vh;
+}
+
+.tudao{
+    display: flex;
+    margin-left: 40vh;
+}
+.tab_prod{
+    margin-top: 5vh;
+}
+.tab{
+    border: solid 1px black;
+    width: 25vh;
 }

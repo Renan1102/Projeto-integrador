@@ -11,19 +11,19 @@ codigo: {
 },
 categoria: {
     type: String,
-    required: [true, "Insira um E-Mail Valido"],
+    required: [true, "Insira uma categoria Valida"],
 },
 data: {
     type: String,
-    required: [true, "Insira uma senha Valida"],
+    required: [true, "Insira uma data Valida"],
 },
 qtd: {
     type: String,
-    required: [true, "Insira uma senha Valida"],
+    required: [true, "Insira uma qtd Valida"],
 },
 valor: {
     type: String,
-    required: [true, "Insira uma senha Valida"],
+    required: [true, "Insira um valor Valido"],
 },
 descricao: {
     type: String,
@@ -31,8 +31,9 @@ descricao: {
 },
 perecivel: {
     type: String,
-    required: [true, "Insira uma senha Valida"],
+    required: [true, "Insira valor Valido para este campo"],
 },
+//fornecedor: [{ type: Schema.Types.ObjectId, ref: 'fornecedor' }]
 });
 
 export default mongoose.models.Movie || mongoose.model("Movie", MovieSchema);

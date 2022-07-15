@@ -3,7 +3,7 @@
     display: flex;
     float: left;
     width: 25vh;
-    height: 150vh;
+    height: 180vh;
     flex-direction: column;
     font-size: 25px;
   }
@@ -35,17 +35,22 @@
   .sticky {
     width: 100%;
     background-color: rgb(192, 189, 189);
+    text-align: center;
+    border-bottom: solid 2px black;
   }
   .title {
     margin-left: 20vh;
-    color: rgb(131, 127, 127);
+    color: rgb(175, 124, 35);
     padding: 4vh;
-    margin-left: 30vh;
+    
+  }
+  .l2{
+    margin-left: 3vh;
   }
   
   .iconoff {
     text-decoration: none;
-    color: rgb(82, 73, 73);
+    color: rgb(175, 124, 35);
     float: right;
     cursor: pointer;
     

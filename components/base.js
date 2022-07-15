@@ -7,7 +7,8 @@ import { IoNewspaperOutline } from "react-icons/io5";
 import { BsCartCheck } from "react-icons/bs";
 import { AiOutlinePoweroff } from "react-icons/ai";
 import { AiOutlineUsergroupAdd } from "react-icons/ai";
-
+import { BsBoxSeam } from "react-icons/bs"
+import { IoBusiness } from "react-icons/io5"
 function Base() {
   return (
     <>
@@ -41,7 +42,12 @@ function Base() {
          Funcionarios</a>
         </Link>
 
-        <Link href="/">
+        <Link href="/new4">
+        <a className="links"><IoBusiness className="icon" size={30} />
+         Fornecedores</a>
+        </Link>
+
+        <Link href="/relatorio">
         <a className="links"><IoNewspaperOutline className="icon" size={30} />
          Gerar Relatório</a>
         </Link>
@@ -50,7 +56,7 @@ function Base() {
       <header className="sticky">
         <h1 className="title">{" "}
           Gerenciador de Estoque{" "}
-
+          <BsBoxSeam className="l2" size={70} />
           <Link className="" href="/">
             <AiOutlinePoweroff className="iconoff" size={30} />
             

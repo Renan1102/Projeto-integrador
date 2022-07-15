@@ -4,9 +4,9 @@ import Funcionario from "../../../models/Funcionario";
 export default async function handler(req, res) {
   await conectarDB();
 
-  // GET api/funcionario/:id (obtener un id y listarlo)
-  // DELETE api/funcionario/:id (elimina un doc con id)
-  // PUT api/funcionario/:id (modificar un doc con id)
+  // GET api/funcionario/:id 
+  // DELETE api/funcionario/:id
+  // PUT api/funcionario/:id 
 
   const {
     method,

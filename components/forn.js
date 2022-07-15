@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 
-const Form = ({ formData, forNewMovie = true }) => {
+const func = ({ formData, forNewFunc = true }) => {
   const router = useRouter();
 
   const {
@@ -14,14 +14,13 @@ const Form = ({ formData, forNewMovie = true }) => {
   } = useForm();
 
   const [form, setForm] = useState({
-    nome: formData.nome,
+    nomeFornecedor: formData.nomeFornecedor,
     codigo: formData.codigo,
-    categoria: formData.categoria,
-    data: formData.data,
-    qtd: formData.qtd,
-    valor: formData.valor,
-    descricao: formData.descricao,
-    perecivel: formData.perecivel
+    endereco: formData.endereco,
+    CEP: formData.CEP,
+    contato: formData.contato,
+    telefone: formData.telefone,
+    CNPJ: formData.CNPJ
   });
   const [message, setMenssage] = useState([]);
 
@@ -35,7 +34,7 @@ const Form = ({ formData, forNewMovie = true }) => {
 
   const handleFormSubmit = (e) => {
     //e.preventDefault();
-    if (forNewMovie) {
+    if (forNewFunc) {
       postData(form);
     } else {
       // editar data
@@ -47,7 +46,7 @@ const Form = ({ formData, forNewMovie = true }) => {
     setMenssage([]);
     const { id } = router.query;
     try {
-      const res = await fetch(`/api/movie/${id}`, {
+      const res = await fetch(`/api/fornecedor/${id}`, {
         method: "PUT",
         headers: {
           "Content-type": "application/json",
@@ -68,7 +67,7 @@ const Form = ({ formData, forNewMovie = true }) => {
         }
       } else {
         setMenssage([]);
-        router.push("/estoque");
+        router.push("/home");
       }
     } catch (error) {
       console.log(error);
@@ -78,7 +77,7 @@ const Form = ({ formData, forNewMovie = true }) => {
   const postData = async (form) => {
     try {
       console.log(form);
-      const res = await fetch("/api/movie", {
+      const res = await fetch("/api/fornecedor", {
         method: "POST",
         headers: {
           "Content-type": "application/json",
@@ -98,7 +97,7 @@ const Form = ({ formData, forNewMovie = true }) => {
           ]);
         }
       } else {
-        router.push("/estoque");
+        router.push("/new");
       }
     } catch (error) {
       console.log(error);
@@ -108,146 +107,140 @@ const Form = ({ formData, forNewMovie = true }) => {
   return (
     <form className="adiciona" onSubmit={handleSubmit(handleFormSubmit)}>
       <label className="campo" >
-              Nome:
-            </label><br/>
+              Nome Fornecedor:
+            </label>
       <input
         className="add"
         type="text"
-        placeholder="Ex: Batata"
+        placeholder="Ex: Fornecedor 1"
         autoComplete="off"
-        name="nome"
-        value={form.nome}
-        {...register("nome", { required: true })}
+        name="nomeFornecedor"
+        value={form.nomeFornecedor}
+        {...register("nomeFornecedor", { required: true })}
         onChange={handleChange}
-      /><br/>
-      {errors.nome && <span class="mens">Nome é obrigatório</span>}
+      />
+      {errors.nomeFornecedor && <span class="mens">Nome é obrigatório</span>}
       <br/>
 
       <label className="campo" >
               Código:
-            </label><br/>
+            </label>
       <input
         className="add"
         type="text"
-        placeholder="EX: 000"
+        placeholder="Ex: 000"
         autoComplete="off"
         name="codigo"
         value={form.codigo}
         {...register("codigo", { required: true,
-          pattern: {
-         value: /^[0-9]+$/i,
-         message: 'Enter a valid name address',
-       },
-     })}
+             pattern: {
+            value: /^[0-9]+$/i,
+            message: 'Enter a valid name address',
+          },
+        })}
         onChange={handleChange}
-      /><br/>
+      />
       {errors.codigo && <span class="mens">Apenas numeros para código</span>}
       <br/>
 
       <label className="campo" >
-              Categoria:
-            </label><br/>
+              Endereco:
+            </label>
       <input
         className="add"
         type="text"
-        placeholder="Ex: material escolar, produto de limpeza"
+        placeholder="Rua, bairro, cidade, Nr"
         autoComplete="off"
-        name="categoria"
-        value={form.categoria}
-        {...register("categoria", { required: true })}
+        name="endereco"
+        value={form.endereco}
+        {...register("endereco", { required: true })}
         onChange={handleChange}
-      /><br/>
-      {errors.categoria && <span class="mens">Digite uma categoria valida</span>}
+      />
+      {errors.endereco && <span class="mens">Digite um endereço valido</span>}
       <br/>
       
       <label className="campo" >
-              Data de Validade:
-            </label><br/>
+      CEP:
+            </label>
       <input
         className="add"
-        type="date"
-        placeholder="data validade"
+        type="string"
+        placeholder="Ex: 99170000"
         autoComplete="off"
-        name="data"
-        value={form.data}
-        {...register("data", { required: true })}
+        name="CEP"
+        value={form.CEP}
+        {...register("CEP", { required: true })}
         onChange={handleChange}
-      /><br/>
-      {errors.data && <span class="mens">Data de Validade incorreta</span>}
+      />
+      {errors.CEP && <span class="mens">CEP incorreto</span>}
       <br/>
 
       <label className="campo" >
-              Quantidade:
-            </label><br/>
+              Contato:
+            </label>
       <input
         className="add"
-        type="number"
-        placeholder="Quantidade"
+        type="text"
+        placeholder="Ex: fulano@gmail.com"
         autoComplete="off"
-        name="qtd"
-        value={form.qtd}
-        {...register("qtd", { required: true })}
+        name="contato"
+        value={form.contato}
+        {...register("contato", { required: true, pattern: {
+            value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+            message: "Please enter a valid email"
+          },
+        })}
         onChange={handleChange}
-      /><br/>
-      {errors.qtd && <span class="mens">Quantidade invalida</span>}
+      />
+      {errors.contato && <span class="mens">contato incorreto</span>}
       <br/>
 
        <label className="campo" >
-              Valor unidade:
-            </label><br/>
-      <input
-        className="add"
-        type="double"
-        placeholder="Ex: 3.00"
-        autoComplete="off"
-        name="valor"
-        value={form.valor}
-        {...register("valor", { required: true, pattern: {
-          value: /^[0-9]+\.[0-9]+$/i,
-          message: 'Enter a valid valor address',
-        },
-      })}
-        onChange={handleChange}
-      /><br/>
-      {errors.valor && <span class="mens">valor invalido</span>}
-      <br/>
-
-      <label className="campo" >
-              Descrição:
-            </label><br/>
+              Telefone:
+            </label>
       <input
         className="add"
         type="text"
-        placeholder="Ex: Cobertor 100% algodão"
+        placeholder="Ex: 54990034125"
         autoComplete="off"
-        name="descricao"
-        value={form.descricao}
-        {...register("descricao", { required: true })}
+        name="telefone"
+        value={form.telefone}
+        {...register("telefone", { required: true, minLength: 11, maxLength: 11  })}
         onChange={handleChange}
-      /><br/>
-      {errors.descricao && <span class="mens">Digite uma descrição valida</span>}
+      />
+      {errors.telefone && <span class="mens">Telefone deve ter 11 digitos</span>}
       <br/>
 
       <label className="campo" >
-              Perecível:
-            </label><br/>
+              CNPJ:
+            </label>
+      <input
+        className="add"
+        type="text"
+        placeholder="Ex: XX. XXX. XXX/0001-XX."
+        autoComplete="off"
+        name="CNPJ"
+        value={form.CNPJ}
+        {...register("CNPJ", { required: true, 
+            pattern: {
+                value: /^[0-9]{2}\.?[0-9]{3}\.?[0-9]{3}\/?[0-9]{4}\-?[0-9]{2}$/,
+                message: "Please enter a valid CNPJ"
+              }, })}
+        onChange={handleChange}
+      />
+      {errors.CNPJ && <span class="mens">Digite um CNPJ</span>}
       <br/>
-      <div className="checkb">
-      <input className="checkbox" onChange={handleChange} type="radio" name="perecivel"  value={setForm.perecivel = "Sim"} />Sim
-      <input className="checkbox" onChange={handleChange} type="radio" name="perecivel" value={setForm.perecivel = "Não"}/>Não
-      </div>
-      <br/>
-      <br/>
-      
 
       
+      <br/>
+      
       <button className="but" type="submit">
-        {forNewMovie ? "Adicionar" : "Editar"}
+        {forNewFunc ? "Adicionar" : "Editar"}
       </button>
       <br/>
 
       <button className="but" type="submit">
-      <Link  href="/home">
+      <Link  href="/func">
         <a className="but">Voltar</a>
       </Link>
       </button>
@@ -258,4 +251,4 @@ const Form = ({ formData, forNewMovie = true }) => {
   );
 };
 
-export default Form;
+export default func;

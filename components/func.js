@@ -108,23 +108,23 @@ const func = ({ formData, forNewFunc = true }) => {
     <form className="adiciona" onSubmit={handleSubmit(handleFormSubmit)}>
       <label className="campo" >
               Nome:
-            </label>
+            </label><br/>
       <input
         className="add"
         type="text"
-        placeholder="Nome"
+        placeholder="Ex: Maria"
         autoComplete="off"
         name="nome"
         value={form.nome}
         {...register("nome", { required: true })}
         onChange={handleChange}
-      />
+      /><br/>
       {errors.nome && <span class="mens">Nome é obrigatório</span>}
       <br/>
 
       <label className="campo" >
               Código:
-            </label>
+            </label><br/>
       <input
         className="add"
         type="text"
@@ -135,17 +135,17 @@ const func = ({ formData, forNewFunc = true }) => {
         {...register("codigo", { required: true,
              pattern: {
             value: /^[0-9]+$/i,
-            message: 'Enter a valid e-mail address',
+            message: 'Enter a valid name address',
           },
         })}
         onChange={handleChange}
-      />
+      /><br/>
       {errors.codigo && <span class="mens">Apenas numeros para código</span>}
       <br/>
 
       <label className="campo" >
               Endereco:
-            </label>
+            </label><br/>
       <input
         className="add"
         type="text"
@@ -155,13 +155,13 @@ const func = ({ formData, forNewFunc = true }) => {
         value={form.endereco}
         {...register("endereco", { required: true })}
         onChange={handleChange}
-      />
+      /><br/>
       {errors.endereco && <span class="mens">Digite um endereço valido</span>}
       <br/>
       
       <label className="campo" >
       Data de Nascimento:
-            </label>
+            </label><br/>
       <input
         className="add"
         type="date"
@@ -171,13 +171,13 @@ const func = ({ formData, forNewFunc = true }) => {
         value={form.dataNascimento}
         {...register("dataNascimento", { required: true })}
         onChange={handleChange}
-      />
+      /><br/>
       {errors.dataNascimento && <span class="mens">Data de Nascimento incorreto</span>}
       <br/>
 
       <label className="campo" >
               Salario:
-            </label>
+            </label><br/>
       <input
         className="add"
         type="text"
@@ -191,13 +191,13 @@ const func = ({ formData, forNewFunc = true }) => {
           },
         })}
         onChange={handleChange}
-      />
+      /><br/>
       {errors.salario && <span class="mens">Salario incorreto</span>}
       <br/>
 
        <label className="campo" >
               Telefone:
-            </label>
+            </label><br/>
       <input
         className="add"
         type="text"
@@ -207,13 +207,13 @@ const func = ({ formData, forNewFunc = true }) => {
         value={form.telefone}
         {...register("telefone", { required: true, minLength: 11, maxLength: 11  })}
         onChange={handleChange}
-      />
+      /><br/>
       {errors.telefone && <span class="mens">Telefone deve ter 11 digitos</span>}
       <br/>
 
       <label className="campo" >
               Função:
-            </label>
+            </label><br/>
       <input
         className="add"
         type="text"
@@ -223,7 +223,7 @@ const func = ({ formData, forNewFunc = true }) => {
         value={form.funcao}
         {...register("funcao", { required: true })}
         onChange={handleChange}
-      />
+      /><br/>
       {errors.funcao && <span class="mens">Digite uma função</span>}
       <br/>
 

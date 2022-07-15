@@ -20,12 +20,15 @@ export default function Home({ movies }) {
         <h1>Produtos em Estoque</h1>
         
         <div className="tudo">
-        {movies.map(({ _id, nome, descricao }) => (
+        {movies.map(({ _id, nome, descricao, valor }) => (
           
           <div className="bloco" key={_id}>
             <div className="bloc">
               <div className="bloco_nome">{nome}</div>
+              <div className="detalhes">
               <p className="fw-light">{descricao}</p>
+              <p className="fw-light">R$: {valor}</p>
+              </div>
               <Link href={`/${_id}`}>
                 <a className="abrir">Abrir</a>
               </Link>

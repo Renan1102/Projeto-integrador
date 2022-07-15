@@ -71,7 +71,7 @@ export async function getServerSideProps() {
       await conectarDB();
   
       const res = await Funcionario.find({});
-  
+      
       const movies = res.map((doc) => {
         const movie = doc.toObject();
         movie._id = `${movie._id}`;
