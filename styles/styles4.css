@@ -1,11 +1,21 @@
+
+.recado{
+  margin-left: 50vh;
+  border: solid 2px black;
+  width: 40vh;
+}
 .t1 {
     font-size: 4vh;
     margin-left: 30vh;
     margin-top: 5vh;
+    border-top: solid 2px black;
+    text-align: center;
+    font-size: 6vh;
   }
   .tex {
     font-size: 2.5vh;
-    margin-left: 30vh;
+    
+    
   }
   
   .imagh {

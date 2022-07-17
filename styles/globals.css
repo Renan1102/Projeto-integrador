@@ -7,7 +7,7 @@
   }
   
   .links:hover {
-    color: red;
+    color: rgb(175, 124, 35);
     background-color: rgb(0, 0, 0);
   }
   .about {

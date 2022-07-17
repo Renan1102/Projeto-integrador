@@ -97,7 +97,7 @@ const func = ({ formData, forNewFunc = true }) => {
           ]);
         }
       } else {
-        router.push("/new");
+        router.push("/new4");
       }
     } catch (error) {
       console.log(error);

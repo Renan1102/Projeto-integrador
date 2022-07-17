@@ -37,3 +37,20 @@
     text-decoration: none;
     background-color: black;
   }
+
+
+.but_2{
+  margin-top: 3vh;
+    margin-bottom: 1vh;
+    text-decoration: none;
+    color: black;
+    padding: 1vh;
+    width: 15vh;
+    border-radius: 8px;
+  }
+  .but_2:hover{
+    color: red;
+    text-decoration: none;
+    background-color: black;
+
+  }

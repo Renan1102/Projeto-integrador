@@ -4,9 +4,10 @@ import Base from "../components/base";
 import conectarDB from "../lib/dbConnect";
 import Movie from "../models/Movie";
 import Funcionario from "../models/Funcionario";
+import Fornecedor from "../models/Fornecedor";
 
 
-export default function Home({ movies, func }) {
+export default function Home({ movies, func, forn }) {
   //console.log(movies);
   return (
     <>
@@ -18,12 +19,12 @@ export default function Home({ movies, func }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="container">
+      <main className="container_f">
          {/* Relatórios Produtos */}
         <h1>Relatório do Sistema</h1>
         
         <h3 className="tab_prod">Produtos</h3>
-        <tr>
+        <tr className="tab">
         <th className="tab">Código</th>
         <th className="tab">Nome</th>
         <th className="tab">Descrição</th>
@@ -76,6 +77,35 @@ export default function Home({ movies, func }) {
           
           </div>
         ))}
+
+
+        {/* Relatórios fornecedores */}
+        <h3 className="tab_prod">Fornecedores</h3>
+        <tr className="tab">
+        <th className="tab">Código</th>
+        <th className="tab">Nome Fornecedor</th>
+        <th className="tab">Endereço</th>
+        <th className="tab">Telefone</th>
+        <th className="tab">CEP</th>
+        <th className="tab">CNPJ</th>
+    </tr>
+        {forn.map(({ _id, nomeFornecedor,codigo, endereco, CEP, contato,telefone, CNPJ  }) => (
+          
+          <div className="" key={_id}> 
+        <table className="tabela" >   
+    <tr className="tab">
+        <td className="tab">{codigo}</td>
+        <td className="tab">{nomeFornecedor}</td>
+        <td className="tab">{endereco}</td>
+        <td className="tab">{telefone}</td>
+        <td className="tab">{CEP}</td>
+        <td className="tab">{CNPJ}</td>
+    </tr>
+        </table>
+              
+          
+          </div>
+        ))}
         
       </main>
     </div>
@@ -103,9 +133,18 @@ export async function getServerSideProps() {
       return funcion;
     });
 
+
+    //fornecedor infos
+    const ress = await Fornecedor.find({});
+    const forn = ress.map((doc) => {
+      const fornec = doc.toObject();
+      fornec._id = `${fornec._id}`;
+      return fornec;
+    });
+
     // console.log(res)
 
-    return { props: { movies, func } };
+    return { props: { movies, func, forn } };
   } catch (error) {
     console.log(error);
   }

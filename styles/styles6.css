@@ -3,6 +3,12 @@
     
     
 }
+
+.container_f{
+    margin-left: 27vh;
+    
+    
+}
 .container_fornecedor{
     display: flex;
     width: 90vh;
@@ -71,14 +77,23 @@
     border-radius: 8px;
 }
 .func_button:hover{
-    color: red;
+    color: rgb(175, 124, 35);
 }
 
 .icon_func{
     margin-left: 6vh;
 }
 
-
+.bloco_A{
+    border: solid 2px black;
+    width: 25vh;
+    margin-top: 5vh;
+    text-align: center;
+}
+.bloc_A{
+    align-items: center;
+    height: 13vh;
+}
 .container_forn{
     float: right;
     
@@ -91,8 +106,9 @@
 }
 .tab_prod{
     margin-top: 5vh;
+    width: 25vh;
 }
 .tab{
     border: solid 1px black;
-    width: 25vh;
+    width: 28vh;
 }

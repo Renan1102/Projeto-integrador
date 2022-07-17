@@ -27,11 +27,10 @@ export default function New4({ movies }) {
     <div className="container_forn">
         {movies.map(({ _id, nomeFornecedor,codigo, CNPJ }) => (
           
-          <div className="bloco" key={_id}>
-            <div className="bloc">
+          <div className="bloco_A" key={_id}>
+            <div className="bloc_A">
               <div className="bloco_nome">{nomeFornecedor}</div>
-              <p className="fw-light">Código: {codigo}</p>
-              <p className="fw-light">CNPJ: {CNPJ}</p>
+              
              
               <Link href={`/${_id}/forn`}>
                 <a className="abrir">Abrir</a>

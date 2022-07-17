@@ -78,4 +78,43 @@
     color: rgb(255, 0, 0);
   }
   
+  .container_rec{
+    border: solid 2px black;
+    margin-left: 10vh;
+    width: 50vh;
+    text-align: center;
+  }
   
+  .add_rec{
+    width: 30vh;
+
+  }
+  
+  .campo_rec{
+    margin-right: 20vh;
+    font-size: 3vh;
+  }
+  .container_reca{
+    margin-left: 20vh;
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .td{
+    display: flex;
+    
+    
+  }
+  .bloco_B{
+    border: solid 2px white;
+    width: 30vh;
+    margin-top: 5vh;
+    text-align: center;
+    margin-left: 5vh;
+    height: 40vh;
+    background-color:#282a35;
+    color: white;
+
+}
